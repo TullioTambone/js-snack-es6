@@ -24,20 +24,34 @@ const biciclette = [
     }
 ]
 
-let myPeso = biciclette[0].peso;
-let myName = biciclette[0].nome;
+// let myPeso = biciclette[0].peso;
+// let myName = biciclette[0].nome;
 
-function printBike() {
-    biciclette.forEach((element) => { 
-        const {nome, peso} = element;
+// function printBike() {
+//     biciclette.forEach((element) => { 
+//         const {nome, peso} = element;
         
-        if (peso <= myPeso) {
-            myPeso = peso;
-            myName = nome;
-        }
-    });
+//         if (peso <= myPeso) {
+//             myPeso = peso;
+//             myName = nome;
+//         }
+//     });
 
-    return document.writeln(myName, myPeso)
-}
+//     return document.writeln(myName, myPeso)
+// }
 
-printBike();
+// printBike();
+
+
+let myPeso = biciclette[0].peso;
+
+biciclette.forEach((element) => {
+    if ( element.peso <= myPeso) {
+        myPeso = element
+    }
+});
+
+const {nome, peso} = myPeso;
+document.getElementById('snack-1').innerHTML = `
+    <h2>la bici di tipo ${nome} pesa ${peso}kg ed è la più leggera</h2>
+    `
