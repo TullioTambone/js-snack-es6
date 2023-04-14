@@ -23,3 +23,21 @@ const biciclette = [
         peso : 30,
     }
 ]
+
+let myPeso = biciclette[0].peso;
+let myName = biciclette[0].nome;
+
+function printBike() {
+    biciclette.forEach((element) => { 
+        const {nome, peso} = element;
+        
+        if (peso <= myPeso) {
+            myPeso = peso;
+            myName = nome;
+        }
+    });
+
+    return document.writeln(myName, myPeso)
+}
+
+printBike();
